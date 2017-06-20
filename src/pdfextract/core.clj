@@ -80,3 +80,11 @@
             (TextElement/mergeWords)
             (TextChunk/groupByLines)
             (map clojurize))))))
+
+(defn text-tree
+  [extracted-content]
+  (for [page extracted-content]
+    (for [section page]
+      (for [line (:text section)]
+        (for [-chunk line]
+          (:text -chunk))))))
