@@ -4,6 +4,9 @@ A wrapper around [tabula](http://tabula.technology/) that turns PDFs into docume
 
 ## Usage
 
+lein dependency: `[pdfextract "0.2.0"]`
+
+
 ```clojure
 
 (require [pdfextract.core :as ex])
