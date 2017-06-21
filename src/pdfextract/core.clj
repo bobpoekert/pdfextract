@@ -73,10 +73,9 @@
   [pdf]
   (with-open [pdf (read-pdf pdf)]
     (doall
-      (for [page (pages pdf)
-            rect (content-rectangles page)]
+      (for [page (pages pdf)]
           (->>
-            (.getTexts rect)
+            (.getTexts page)
             (TextElement/mergeWords)
             (TextChunk/groupByLines)
             (map clojurize))))))
